@@ -49,9 +49,9 @@ public class JdbcTodoListRepo implements TodoListRepo{
 	}
 
 	@Override
-	public void updateList(TodoList listToUpdate) {
+	public void updateList(int listToUpdateId, TodoList listToUpdate) {
 		// TODO Auto-generated method stub
-		jdbcTemplate.update("update todoapp.todolist set name = ? where id=?", listToUpdate.getName(), listToUpdate.getId());
+		jdbcTemplate.update("update todoapp.todolist set name = ? where id=?", listToUpdate.getName(), listToUpdateId);
 	}
 	
 	private TodoList mapRowToTodoList(ResultSet row, int rowNum) throws SQLException{
