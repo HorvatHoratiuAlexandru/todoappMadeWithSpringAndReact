@@ -10,6 +10,6 @@ public interface TodoListRepo {
 	public TodoList getById (int listId);
 	public void deleteListById (int listId);
 	public void createNewList (TodoList listToCreate);
-	public void updateList(int listToUpdateId, TodoList listToUpdate);
+	public void updateList(TodoList listToUpdate);
 
 }

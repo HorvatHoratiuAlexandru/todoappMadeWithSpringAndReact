@@ -7,6 +7,14 @@ public class Todo {
 	private int state;
 	private String description;
 	
+	
+	
+	public Todo(int lid, int state, String description) {
+		super();
+		this.lid = lid;
+		this.state = state;
+		this.description = description;
+	}
 	public void setId(int id) {
 		this.id = id;
 	}

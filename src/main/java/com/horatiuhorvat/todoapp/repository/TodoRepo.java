@@ -6,9 +6,9 @@ import com.horatiuhorvat.todoapp.model.Todo;
 
 public interface TodoRepo {
 	
-	public List<Todo> getAll();
-	public Todo getById(int todoId);
+	public List<Todo> getAll(int listId);
 	public void updateTodo(Todo toUpdateTodo);
-	public void deleteTodo(Todo toDeleteTodo);
+	public void deleteTodo(int todoId);
 	public void addTodo(Todo toAddTodo);
+	public void deleteTodoByList(int listId);
 }
