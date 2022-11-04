@@ -86,6 +86,7 @@ public class TodoController {
 	
 	@DeleteMapping(value = "api/todo/delete/{id}")
 	public String deleteTodo(@PathVariable(value = "id") int TodoId) {
+		todoRepo.deleteTodo(TodoId);
 		return "OK";
 	}
 

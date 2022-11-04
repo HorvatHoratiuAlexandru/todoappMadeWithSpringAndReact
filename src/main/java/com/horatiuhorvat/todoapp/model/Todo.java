@@ -9,8 +9,9 @@ public class Todo {
 	
 	
 	
-	public Todo(int lid, int state, String description) {
+	public Todo(int id, int lid, int state, String description) {
 		super();
+		this.id = id;
 		this.lid = lid;
 		this.state = state;
 		this.description = description;

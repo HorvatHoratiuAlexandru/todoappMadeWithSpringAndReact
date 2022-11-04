@@ -30,7 +30,7 @@ public class JdbcTodoRepo implements TodoRepo {
 	@Override
 	public void updateTodo(Todo toUpdateTodo) {
 		// TODO Auto-generated method stub
-		jdbcTemplate.update("update todoapp.todo set description = ? state = ? where id=?", toUpdateTodo.getDescription(), toUpdateTodo.getState(), toUpdateTodo.getId());
+		jdbcTemplate.update("update todoapp.todo set description = ?, state = ? where id=?", toUpdateTodo.getDescription(), toUpdateTodo.getState(), toUpdateTodo.getId());
 	}
 
 	@Override
@@ -42,12 +42,12 @@ public class JdbcTodoRepo implements TodoRepo {
 	@Override
 	public void addTodo(Todo toAddTodo) {
 		// TODO Auto-generated method stub
-		jdbcTemplate.update("insert into todoapp.todo (description, listid)", toAddTodo.getDescription(), toAddTodo.getLid());
+		jdbcTemplate.update("insert into todoapp.todo (description, listid) values(?,?)", toAddTodo.getDescription(), toAddTodo.getLid());
 	}
 
 	private Todo mapRowToTodo(ResultSet row, int rowNum) throws SQLException{
 		
-		return new Todo(row.getInt("listid"), row.getInt("state"), row.getString("description"));
+		return new Todo(row.getInt("id"), row.getInt("listid"), row.getInt("state"), row.getString("description"));
 	}
 
 	@Override
